@@ -1,13 +1,22 @@
 package pinyin
 
 import (
+	"os"
+	"path"
+	"path/filepath"
 	"strings"
 
 	"github.com/yanyiwu/gojieba"
 )
 
 var (
-	jieba = gojieba.NewJieba()
+	dictDir = path.Join(filepath.Dir(os.Args[0]), "configs/api/dict")
+	jiebaPath = path.Join(dictDir, "jieba.dict.utf8")
+	hmmPath = path.Join(dictDir, "hmm_model.utf8")
+	userPath = path.Join(dictDir, "user.dict.utf8")
+	idfPath = path.Join(dictDir, "idf.utf8")
+	stopPath = path.Join(dictDir, "stop_words.utf8")
+	jieba = gojieba.NewJieba(jiebaPath, hmmPath, userPath, idfPath, stopPath)
 )
 
 func cutWords(s string) []string {
