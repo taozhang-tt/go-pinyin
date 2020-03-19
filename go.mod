@@ -1,4 +1,4 @@
-module github.com/mozillazg/go-pinyin
+module github.com/taozhang-tt/go-pinyin
 
 require (
 	github.com/mattn/go-isatty v0.0.10
