@@ -1,16 +1,14 @@
 package pinyin
 
 import (
-	"os"
 	"path"
-	"path/filepath"
 	"strings"
 
 	"github.com/yanyiwu/gojieba"
 )
 
 var (
-	dictDir = path.Join(filepath.Dir(os.Args[0]), "dict")
+	dictDir = "dict"
 	jiebaPath = path.Join(dictDir, "jieba.dict.utf8")
 	hmmPath = path.Join(dictDir, "hmm_model.utf8")
 	userPath = path.Join(dictDir, "user.dict.utf8")
